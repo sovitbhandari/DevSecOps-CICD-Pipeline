@@ -79,7 +79,7 @@ jobs:
     needs: [build]
     env:
       REGISTRY: ghcr.io
-      IMAGE_NAME: sovitbhandari/devsecops-cicd-pipeline         #you can either write ${{ github.repository }} or hardcode, but since my repo name is not all lower case I have hard coded it
+      IMAGE_NAME: ${{ github.repository }}
     outputs:
       image_tag: ${{ steps.set_output.outputs.image_tag }}
     steps:
@@ -111,8 +111,6 @@ jobs:
             type=sha,format=long
             type=ref,event=branch
             latest
-          flavor: |
-            latest=true
       
       - name: Build Docker image
         uses: docker/build-push-action@v5
@@ -126,13 +124,13 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ steps.meta.outputs.tags }}
+          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
-
+      
       - name: Push Docker image
         uses: docker/build-push-action@v5
         with:
