@@ -21,7 +21,7 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
         <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#f1efe5' }}>
           <div className="flex items-center gap-2">
             <User className="h-4 w-4" style={{ color: '#006747' }} />
-            <span className="font-medium" style={{ color: '#006747' }}>User1</span>
+            <span className="font-medium" style={{ color: '#006747' }}>User 1</span>
           </div>
           <span className="text-lg font-bold" style={{ color: '#006747' }}>{scores.X}</span>
         </div>
@@ -29,7 +29,7 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scores }) => {
         <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#e5e3da' }}>
           <div className="flex items-center gap-2">
             <User className="h-4 w-4" style={{ color: '#CFC493' }} />
-            <span className="font-medium" style={{ color: '#CFC493' }}>User2</span>
+            <span className="font-medium" style={{ color: '#CFC493' }}>User 2</span>
           </div>
           <span className="text-lg font-bold" style={{ color: '#CFC493' }}>{scores.O}</span>
         </div>
