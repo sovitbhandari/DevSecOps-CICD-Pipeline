@@ -2,7 +2,8 @@
 
 A fully containerized, production-grade Tic Tac Toe game with an end-to-end CI/CD pipeline using GitHub Actions, GHCR, Docker, Kubernetes, and Argo CD.
 
-![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/d310d77f-b652-4f07-811a-3ee39a9bb14a)
+
 
 
 
@@ -102,7 +103,7 @@ npm run dev
 
 Visit: [http://localhost:5173](http://localhost:5173)
 
-<img src="image.png" alt="Preview" width="500"/>
+<img width="498" alt="image" src="https://github.com/user-attachments/assets/d07bdda6-dd1c-4069-92a6-3fafb5b7bcd0" />
 
 ### 2. Production Build
 
@@ -123,7 +124,8 @@ Visit: [http://localhost:9099](http://localhost:9099)
 
 **Docker container running locally with the app accessible in a browser.**
 
-<img src="image-1.png" alt="Preview" width="500"/>
+<img width="501" alt="image" src="https://github.com/user-attachments/assets/29099f77-a6bc-46bb-8f85-09a45139e06b" />
+
 
 ---
 
@@ -159,7 +161,8 @@ In your `.github/workflows/ci-cd.yml`, use the following step to authenticate wi
 
 **Now you should be able to see your workflow working properly in repository action section**
 
-<img src="image-3.png" alt="Preview" height= "250" width="700"/>
+![image](https://github.com/user-attachments/assets/e2e47421-8b20-4be2-89cd-451125ca368b)
+
 
 <h6>&nbsp;</h6>
 
@@ -310,9 +313,10 @@ echo <copied-password-from-above-step> | base64 --decode
 ---
 **Create application in ArgoCD using following steps**
 
-<img src="image-4.png" alt="Preview" width="400"/>
-<img src="image-5.png" alt="Preview" height= "340", width="400"/>
-<img src="image-6.png" alt="Preview" width="400"/>
+![image](https://github.com/user-attachments/assets/4e377544-8919-4118-8d2b-b0b70f7d3ade)
+![image](https://github.com/user-attachments/assets/523ceae6-a0e3-4674-a693-d26c944e4bc1)
+![image](https://github.com/user-attachments/assets/b53e9069-1184-4505-9acd-033bbfc51b12)
+
 
 
 ## How to Pull from GHCR (Private Registry)
@@ -321,7 +325,8 @@ echo <copied-password-from-above-step> | base64 --decode
 The Argo CD app might shows a ImagePullBackOff error, it's because the image is hosted on GitHub Container Registry (GHCR), which is private by default. Unlike public Docker Hub images, GHCR requires authentication.
 To fix this, you need to configure imagePullSecrets in your Kubernetes deployment to allow access.
 
-<img src="image-7.png" alt="Preview" width="700"/>
+![image](https://github.com/user-attachments/assets/e8614fbf-0df9-4fc7-a4b0-e1b8d7e9ced9)
+
 
 ### Fix: Create `imagePullSecret`
 
@@ -350,7 +355,8 @@ This tells Kubernetes to use the created secret when pulling the image.
 
 
 ## Final Output
-<img src="image-8.png" alt="Preview" width="800"/>
+![image](https://github.com/user-attachments/assets/fafb79a3-b2a8-4f72-b137-f6c18595d111)
+
 
 - Application successfully deployed to Kubernetes
 - GitHub Actions CI/CD pipeline running end-to-end
